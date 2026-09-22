@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Learning Path</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚀 Your Personalized Learning Path</h1>
+
+    <p class="subtitle">
+        Generated using the Machine Learning model.
+    </p>
+
+
+    <div class="student-info">
+
+        <p>
+            <strong>Learning Goal:</strong>
+            {{ goal }}
+        </p>
+
+        <p>
+            <strong>Predicted Learning Level:</strong>
+            {{ level }}
+        </p>
+
+        <p>
+            <strong>Python Skill:</strong>
+            {{ python }}/10
+        </p>
+
+        <p>
+            <strong>SQL Skill:</strong>
+            {{ sql }}/10
+        </p>
+
+        <p>
+            <strong>Math Skill:</strong>
+            {{ math }}/10
+        </p>
+
+        <p>
+            <strong>Study Hours:</strong>
+            {{ study_hours }} hours/day
+        </p>
+
+        <p>
+            <strong>Quiz Score:</strong>
+            {{ quiz_score }}%
+        </p>
+
+        <p>
+            <strong>Projects Completed:</strong>
+            {{ projects_completed }}
+        </p>
+
+    </div>
+
+
+    <div class="learning-path">
+
+        <h2>📚 Recommended Learning Path</h2>
+
+        <ol>
+
+            {% for topic in learning_path %}
+
+                <li>
+                    {{ topic }}
+                </li>
+
+            {% endfor %}
+
+        </ol>
+
+    </div>
+
+
+    <a href="/dashboard" class="back-button">
+        📊 Open Dashboard
+    </a>
+
+    <br>
+
+    <a href="/" class="back-button">
+        ← Create Another Learning Path
+    </a>
+
+</div>
+
+</body>
+
+</html>

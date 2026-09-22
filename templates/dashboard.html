@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Learning Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📊 Learning Dashboard</h1>
+
+    <p class="subtitle">
+        Your personalized learning overview
+    </p>
+
+    <div class="student-info">
+
+        <p><strong>Learning Goal:</strong> {{ goal }}</p>
+
+        <p><strong>Predicted Level:</strong> {{ level }}</p>
+
+        <p><strong>Python Skill:</strong> {{ python }}/10</p>
+
+        <p><strong>SQL Skill:</strong> {{ sql }}/10</p>
+
+        <p><strong>Math Skill:</strong> {{ math }}/10</p>
+
+        <p><strong>Study Hours:</strong> {{ study_hours }} hours/day</p>
+
+        <p><strong>Quiz Score:</strong> {{ quiz_score }}%</p>
+
+        <p><strong>Projects Completed:</strong> {{ projects_completed }}</p>
+
+    </div>
+
+    <div class="learning-path">
+
+        <h2>📚 Personalized Learning Roadmap</h2>
+
+        <ol>
+
+            {% for topic in learning_path %}
+
+            <li>
+                {{ topic }}
+            </li>
+
+            {% endfor %}
+
+        </ol>
+
+    </div>
+
+    <a href="/" class="back-button">
+        ← Create New Learning Path
+    </a>
+
+</div>
+
+</body>
+
+</html>

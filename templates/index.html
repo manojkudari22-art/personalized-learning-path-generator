@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personalized Learning Path</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎓 Personalized Learning Path Generator</h1>
+
+    <p class="subtitle">
+        Enter your skills and learning details to get a personalized learning path.
+    </p>
+
+    <form action="/generate" method="POST">
+
+        <label>Learning Goal</label>
+        <input
+            type="text"
+            name="goal"
+            placeholder="Example: Python Developer"
+            required
+        >
+
+        <label>Python Skill (1-10)</label>
+        <input
+            type="number"
+            name="python"
+            min="1"
+            max="10"
+            required
+        >
+
+        <label>SQL Skill (1-10)</label>
+        <input
+            type="number"
+            name="sql"
+            min="1"
+            max="10"
+            required
+        >
+
+        <label>Math Skill (1-10)</label>
+        <input
+            type="number"
+            name="math"
+            min="1"
+            max="10"
+            required
+        >
+
+        <label>Study Hours Per Day</label>
+        <input
+            type="number"
+            name="study_hours"
+            min="1"
+            max="24"
+            required
+        >
+
+        <label>Quiz Score (0-100)</label>
+        <input
+            type="number"
+            name="quiz_score"
+            min="0"
+            max="100"
+            required
+        >
+
+        <label>Projects Completed</label>
+        <input
+            type="number"
+            name="projects_completed"
+            min="0"
+            required
+        >
+
+        <button type="submit">
+            Generate Learning Path →
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
